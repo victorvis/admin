@@ -88,6 +88,14 @@ class User extends BaseUser
      */
     protected $cep;
 
+    /**
+     * @Expose
+     * @Groups({"city"})
+     * @ORM\ManyToOne(targetEntity="VICTORVIS\AdminBundle\Entity\City")
+     * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
+     */
+    protected $city;    
+    
 
     public function __construct()
     {
