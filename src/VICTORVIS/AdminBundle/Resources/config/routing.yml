@@ -1,0 +1,3 @@
+victorvis_admin_index:
+    pattern:  /admin
+    defaults: { _controller: VICTORVISAdminBundle:Default:index }
