@@ -1,2 +1,2 @@
-Symfony Admin Bundle
+Symfony Project Default
 ========================

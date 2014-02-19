@@ -71,4 +71,13 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: VICTORVIS\AdminBundle\Entity\User
+    user_class: VICTORVIS\UserBundle\Entity\User
+    registration:
+        form:
+            type: victorvis_user_registration
+    profile:
+        form:
+            type: victorvis_user_profile
+    resetting:
+        form:
+            type: victorvis_user_resetting    

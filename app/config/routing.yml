@@ -1,9 +1,19 @@
-# AdminBundle
-victorvis_admin:
-    resource: "@VICTORVISAdminBundle/Resources/config/routing.yml"
+# FrontBundle
+victorvis_front:
+    resource: "@VICTORVISFrontBundle/Resources/config/routing.yml"
     prefix:   /
 
 # UserBundle
+victorvis_user:
+    resource: "@VICTORVISUserBundle/Resources/config/routing.yml"
+    prefix:   /user
+
+# AdminBundle
+victorvis_admin:
+    resource: "@VICTORVISAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+# FosUserBundle
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

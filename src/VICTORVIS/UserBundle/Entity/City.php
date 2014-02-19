@@ -1,6 +1,6 @@
 <?php
 
-namespace VICTORVIS\AdminBundle\Entity;
+namespace VICTORVIS\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

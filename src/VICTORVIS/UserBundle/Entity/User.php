@@ -1,5 +1,5 @@
 <?php
-namespace VICTORVIS\AdminBundle\Entity;
+namespace VICTORVIS\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
@@ -91,7 +91,7 @@ class User extends BaseUser
     /**
      * @Expose
      * @Groups({"city"})
-     * @ORM\ManyToOne(targetEntity="VICTORVIS\AdminBundle\Entity\City")
+     * @ORM\ManyToOne(targetEntity="VICTORVIS\UserBundle\Entity\City")
      * @ORM\JoinColumn(name="city_id", referencedColumnName="id")
      */
     protected $city;    
@@ -165,4 +165,23 @@ class User extends BaseUser
         $cep = preg_replace('/[^0-9]/', '', $cep);
         $this->cep = $cep;
     }
+    
+    /**
+     * @param \PROCERGS\LoginCidadao\CoreBundle\Entity\City $city
+     * @return City
+     */
+    public function setCity(\PROCERGS\LoginCidadao\CoreBundle\Entity\City $city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+
+    /**
+     * @return \PROCERGS\LoginCidadao\CoreBundle\Entity\City
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }    
 }

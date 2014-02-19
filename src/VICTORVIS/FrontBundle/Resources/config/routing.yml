@@ -1,0 +1,3 @@
+victorvis_front_homepage:
+    pattern:  /
+    defaults: { _controller: VICTORVISFrontBundle:Default:index }

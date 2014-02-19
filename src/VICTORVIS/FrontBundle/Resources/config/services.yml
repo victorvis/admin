@@ -1,0 +1,7 @@
+parameters:
+#    victorvis_front.example.class: VICTORVIS\FrontBundle\Example
+
+services:
+#    victorvis_front.example:
+#        class: %victorvis_front.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

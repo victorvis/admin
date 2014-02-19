@@ -16,7 +16,9 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
+            new VICTORVIS\UserBundle\VICTORVISUserBundle(),
             new VICTORVIS\AdminBundle\VICTORVISAdminBundle(),
+            new VICTORVIS\FrontBundle\VICTORVISFrontBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
         );

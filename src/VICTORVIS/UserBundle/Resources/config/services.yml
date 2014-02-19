@@ -1,0 +1,27 @@
+parameters:
+#    victorvis_user.example.class: VICTORVIS\UserBundle\Example
+
+services:
+    victorvis_user.registration.form.type:
+        class: VICTORVIS\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: victorvis_user_registration }
+
+    victorvis_user.profile.form.type:
+        class: VICTORVIS\UserBundle\Form\Type\ProfileFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: victorvis_user_profile }
+
+    victorvis_user.resetting.form.type:
+        class: VICTORVIS\UserBundle\Form\Type\ResettingFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: victorvis_user_resetting }
+
+    victorvis_user.profile_edit:
+        class: VICTORVIS\UserBundle\EventListener\ProfileEditListner
+        arguments: [@router]
+        tags:
+            - { name: kernel.event_subscriber }
