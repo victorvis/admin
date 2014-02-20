@@ -1,0 +1,60 @@
+body#login {padding-top:0;}
+
+/* login */
+#login .container {
+    background-color: #F7F7F7;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);    
+	border-radius: 8px; 
+	-moz-border-radius: 8px; 
+	-webkit-border-radius: 8px;
+	-webkit-transition: all 0.2s;
+	-moz-transition: all 0.2s;
+	-ms-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+	width:375px;
+	height:260px;
+	border:1px solid #CCCCCC;
+	clear:both;
+    padding: 20px 25px;
+}
+
+#login .login-box {
+    width:375px;
+	height:260px;
+	position:absolute;
+	top:40%;
+	left:50%;
+	margin-left:-190px;
+	margin-top:-130px;
+}
+
+#login .error-container {border-color:#B94A48;}
+#login .success-container {border-color:#468847;}
+
+#login .btn {float:right;}
+#login .password, #login .email {width:292px}
+#login span {float:left;margin-top:12px;font-size:12px;}
+#login fieldset {margin-left:20px;}
+
+#login .navbar {margin-bottom:12px;color:#FFF}
+
+#login .navbar .navbar-inner {
+    padding-top:5px;
+    padding-bottom:5px;
+    -webkit-border-radius:0;
+    -moz-border-top-radius: 0;
+    border-top-radius: 0;
+    
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-top-left-radius: 4px;
+    border-top-left-radius: 4px;
+    
+    -webkit-border-top-right-radius: 4px;
+    -moz-border-top-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.bs-alert p {
+    padding: 10px;
+}
