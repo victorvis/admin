@@ -167,10 +167,10 @@ class User extends BaseUser
     }
     
     /**
-     * @param \PROCERGS\LoginCidadao\CoreBundle\Entity\City $city
+     * @param \VICTORVIS\UserBundle\Entity\City $city
      * @return City
      */
-    public function setCity(\PROCERGS\LoginCidadao\CoreBundle\Entity\City $city = null)
+    public function setCity(\VICTORVIS\UserBundle\Entity\City $city = null)
     {
         $this->city = $city;
 
@@ -178,7 +178,7 @@ class User extends BaseUser
     }
 
     /**
-     * @return \PROCERGS\LoginCidadao\CoreBundle\Entity\City
+     * @return \VICTORVIS\UserBundle\Entity\City
      */
     public function getCity()
     {
