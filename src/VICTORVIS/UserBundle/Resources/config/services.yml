@@ -22,6 +22,12 @@ services:
 
     victorvis_user.profile_edit:
         class: VICTORVIS\UserBundle\EventListener\ProfileEditListner
-        arguments: [@router]
+        arguments: ["@router"]
         tags:
             - { name: kernel.event_subscriber }
+            
+    victorvis_user.security.interactive_login_listener:
+        class: VICTORVIS\UserBundle\EventListener\InteractiveLoginListener
+        arguments: ["@router"]
+        tags:
+            - { name: kernel.event_listener,  event: security.interactive_login, method: onSecurityInteractiveLogin, priority: 255 }
