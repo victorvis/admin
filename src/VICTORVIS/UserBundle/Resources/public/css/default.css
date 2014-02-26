@@ -1,23 +1,80 @@
-/* LOGIN */
-.content-login {
-    color: #555555;
-    font-family: 'Open Sans',arial;
-    margin-top: 100px;
-    margin-bottom: 100px;
+#footer {
+    background-color: #F5F5F5;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    margin-top: 50px;
 }
-.content-login .banner h2 {
-    font-weight: 300;
-    font-size: 24px;
-    margin-bottom: 30px;
+#footer .container {
+    max-width: 680px;
+    padding: 0 15px;
+    width: auto;
 }
-.content-login .login-box {
-    background-color: #F7F7F7;
+#footer .container .text-muted {
+    margin: 20px 0;
+}
+#footer.login {
+    position: absolute;
+}
+
+.navbar-default {
+    background-image: none;
+    background-repeat: repeat-x;
     border-radius: 4px;
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-    margin-bottom: 20px;
-    padding: 60px 30px 50px 30px
+    box-shadow: none;
 }
-.content-login a.resetting-password {float: right;}
-.content-login form button {margin-bottom: 10px;margin-top: 20px;}
-.content-login form input.input-lg {border-radius: 0px;}
-.content-login form input[type="text"] {border-bottom: 0;}
+
+.navbar-default .btn-login{
+    margin-top: 8px; 
+}
+
+/******** LOGIN ********/
+body{font-family: 'Open Sans Condensed', sans-serif;}
+html {
+    min-height: 100%;
+    position: relative;
+}
+.content-login .form-signin {
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
+}
+.content-login .form-signin .form-signin-heading, .content-login .form-signin .checkbox {
+    margin-bottom: 10px;
+}
+.content-login .form-signin input[type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
+}
+.content-login .form-signin input[type="password"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 10px;
+}
+.content-login .form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.content-login .form-signin .form-control:focus {z-index: 2;}
+.content-login .form-signin .checkbox {font-weight: normal;}
+.content-login {padding-top: 35px;}
+.content-login .register-now{ padding: 30px 0;}
+
+/******** REGISTRO ********/
+.content-register h1 {margin: 10px 30px 50px;}
+.content-register form .first-name {padding-right:5px;}
+.content-register form .surname {padding-left: 5px;}
+.content-register .box-register {
+    background: none repeat scroll 0 0 #F1F1F1;
+    border-radius: 5px;
+    padding: 15px;
+}
+.content-register .page-header {margin: 20px 0;text-align: center;}
+.content-register.container {max-width: 800px;}
+.content-register #fos_user_registration_form_plainPassword div:first-child {padding-bottom: 10px;}

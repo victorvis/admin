@@ -15,18 +15,16 @@ class RegistrationFormType extends BaseType
         $builder->add('firstName', 'text', array('label' => 'form.firstName', 'translation_domain' => 'FOSUserBundle'));
         $builder->add('surname', 'text', array('label' => 'form.surname', 'translation_domain' => 'FOSUserBundle'));
         $builder->add('cep', null, array('required' => false, 'label' => 'form.cep', 'translation_domain' => 'FOSUserBundle'));
-        $builder->add('cpf', null, array('required' => false, 'label' => 'form.cpf', 'translation_domain' => 'FOSUserBundle') );
         $builder->add('birthdate', 'birthday', array(
             'required' => false,
             'format' => 'dd MMMM yyyy',
-            'widget' => 'choice',
-            'years' => range(date('Y'), date('Y')-70),
+            'widget' => 'single_text',
             'label' => 'form.birthdate', 
             'translation_domain' => 'FOSUserBundle')
         );
         $builder->add('plainPassword', 'repeated', array(
             'type' => 'password',
-            'options' => array('attr' => array('class' => 'form-control'), 'translation_domain' => 'FOSUserBundle'),
+            'options' => array('attr' => array('class' => 'form-control input-sm'), 'translation_domain' => 'FOSUserBundle'),
             'first_options' => array('label' => 'form.password'),
             'second_options' => array('label' => 'form.password_confirmation'),
             'invalid_message' => 'fos_user.password.mismatch',

@@ -1,0 +1,17 @@
+{% extends 'VICTORVISUserBundle::base.html.twig' %}
+
+{% block header %}
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <a href="{{ path("fos_user_security_login") }}" class="btn btn-primary pull-right btn-login" role="button">Login</a>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block footer %}
+    <div id="footer">
+        <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    </div>
+{% endblock %}

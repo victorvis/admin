@@ -63,13 +63,6 @@ class User extends BaseUser
 
     /**
      * @Expose
-     * @Groups({"cpf"})
-     * @ORM\Column(type="string", nullable=true, unique=true)
-     */
-    protected $cpf;
-
-    /**
-     * @Expose
      * @Groups({"email"})
      */
     protected $email;
@@ -130,19 +123,6 @@ class User extends BaseUser
     public function getFullName()
     {
         return $this->getFirstname() . ' ' . $this->getSurname();
-    }
-
-    public function setCpf($cpf)
-    {
-        $cpf = preg_replace('/[^0-9]/', '', $cpf);
-        $this->cpf = $cpf;
-
-        return $this;
-    }
-
-    public function getCpf()
-    {
-        return $this->cpf;
     }
 
     public function getBirthdate()

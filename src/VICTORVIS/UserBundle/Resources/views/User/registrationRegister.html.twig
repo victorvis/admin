@@ -1,0 +1,65 @@
+{% extends 'VICTORVISUserBundle::base.loggedOut.html.twig' %}
+
+{% block body %}
+
+    <div class="content-register container">
+        <div class="page-header">
+            <h1>Crie sua Conta</h1>
+        </div>        
+        
+        <div class="box-banner col-lg-6"></div>
+        
+        <div class="box-register col-lg-5 col-lg-offset-1">
+            {{ form_start(form, {'action': path('fos_user_registration_register'), 'attr': {'role':'form', 'class':'victorvis_user_register'}}) }}
+                {{ form_errors(form) }}
+
+                <div class="form-group">
+                    {{ form_label(form.firstName) }}
+                    <div class="input-error">
+                        {{ form_errors(form.firstName) }}
+                        {{ form_errors(form.surname) }}
+                    </div>
+                    <div class="row">
+                        <div class="first-name col-xs-6">
+                            {{ form_widget(form.firstName, {'attr': {'class': 'form-control input-sm'}}) }}
+                        </div>
+                        <div class="surname col-xs-6">
+                            {{ form_widget(form.surname, {'attr': {'class': 'form-control input-sm'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.email) }}
+                    <div class="input-error">{{ form_errors(form.email) }}</div>
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control input-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.username) }}
+                    <div class="input-error">{{ form_errors(form.username) }}</div>
+                    {{ form_widget(form.username, {'attr': {'class': 'form-control input-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    <div class="input-error">{{ form_errors(form.plainPassword) }}</div>
+                    {{ form_widget(form.plainPassword) }}
+                </div>
+
+                <div class="form-group birthdate">
+                    {{ form_label(form.birthdate) }}
+                    <div class="input-error">{{ form_errors(form.birthdate) }}</div>
+                    {{ form_widget(form.birthdate, {'attr': {'class': 'form-control input-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.cep) }}
+                    <div class="input-error">{{ form_errors(form.cep) }}</div>
+                    {{ form_widget(form.cep, {'attr': {'class': 'form-control input-sm'}}) }}
+                </div>
+                <div class="form-group">
+                    <input class='btn btn-primary btn-sm pull-right' type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+            {{ form_end(form) }}
+        
+        </div>
+    </div>
+
+{% endblock %}
