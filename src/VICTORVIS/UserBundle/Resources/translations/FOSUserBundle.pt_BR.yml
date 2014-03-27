@@ -5,8 +5,8 @@ group.new.submit: 'Criar Grupo'
 group.flash.updated: 'O grupo foi atualizado'
 group.flash.created: 'O grupo foi criado'
 group.flash.deleted: 'O grupo foi removido'
-security.login.username: 'Usuário:'
-security.login.password: 'Senha:'
+security.login.username: 'Usuário'
+security.login.password: 'Senha'
 security.login.remember_me: 'Permanecer conectado'
 security.login.submit: Entrar
 profile.show.username: Usuário
