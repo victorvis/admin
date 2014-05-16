@@ -33,3 +33,14 @@ fos_user_resetting:
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /user/profile
+
+# Facebook
+_security_check_facebook:
+    pattern:   /facebook/login_check
+    defaults:  { _controller: VICTORVISUserBundle:Default:loginFb }
+
+_security_facebook_logout:
+  pattern:  /facebook/logout
+  
+fos_facebook_channel:
+    resource: "@FOSFacebookBundle/Resources/config/routing.xml"

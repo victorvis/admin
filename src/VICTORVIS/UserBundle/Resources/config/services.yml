@@ -1,7 +1,21 @@
 parameters:
-#    victorvis_user.example.class: VICTORVIS\UserBundle\Example
-
+##
+    
 services:
+    fos_facebook.user.login:
+        class: VICTORVIS\UserBundle\Security\User\Provider\FacebookProvider
+        arguments:
+            facebook: "@fos_facebook.api"
+            userManager: "@fos_user.user_manager"
+            validator: "@validator"
+            container: "@service_container"
+            dispatcher: "@event_dispatcher"
+            formFactory: "@fos_user.registration.form.factory"
+
+    victorvis_user.user_manager:
+        class: VICTORVIS\UserBundle\Security\User\Manager\UserManager
+        arguments: ["@security.encoder_factory", "@fos_user.util.username_canonicalizer", "@fos_user.util.email_canonicalizer", "@fos_user.entity_manager", %user.class%, "@service_container"]
+
     victorvis_user.registration.form.type:
         class: VICTORVIS\UserBundle\Form\Type\RegistrationFormType
         arguments: [%fos_user.model.user.class%]

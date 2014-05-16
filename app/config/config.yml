@@ -80,4 +80,17 @@ fos_user:
             type: victorvis_user_profile
     resetting:
         form:
-            type: victorvis_user_resetting    
+            type: victorvis_user_resetting
+    service:
+        user_manager: victorvis_user.user_manager
+        mailer: fos_user.mailer.twig_swift
+
+fos_facebook:
+    alias:  facebook
+    app_id: %facebook_app_id%
+    secret: %facebook_app_secret%
+    cookie: true
+    permissions: %facebook_app_scope%
+    
+parameters:
+    user.class: VICTORVIS\UserBundle\Entity\User

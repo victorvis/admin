@@ -8,6 +8,11 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        chainprovider:
+            chain:
+                providers: [fos_userbundle, fos_facebook_provider]
+        fos_facebook_provider:
+            id: fos_facebook.user.login
         fos_userbundle:
             id: fos_user.user_provider.username
 
@@ -18,6 +23,15 @@ security:
 
         main:
             pattern: ^/
+            
+            fos_facebook:
+                app_url: ""
+                server_url: "http://%site_domain%"
+                login_path: /login
+                check_path: /facebook/login_check
+                default_target_path: fos_user_profile_edit
+                provider: fos_facebook_provider
+
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
@@ -33,3 +47,6 @@ security:
         - { path: ^/user/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user, role: IS_AUTHENTICATED_FULLY }
         - { path: ^/admin/, role: IS_AUTHENTICATED_FULLY }
+        
+        - { path: ^/secured/.*, role: [IS_AUTHENTICATED_FULLY] }
+        - { path: ^/.*, role: [IS_AUTHENTICATED_ANONYMOUSLY] }

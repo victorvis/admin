@@ -13,4 +13,22 @@
         '@VICTORVISUserBundle/Resources/public/js/*' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
+        
+    <script type="text/javascript">
+        function goLogIn(){
+            window.location.href = "{{ path('_security_check_facebook') }}";
+        }
+        
+        function onFbInit() {
+            if (typeof(FB) != 'undefined' && FB != null ) {              
+                FB.Event.subscribe('auth.statusChange', function(response) {
+                    if (response.session || response.authResponse) {
+                        setTimeout(goLogIn, 500);
+                    } else {
+                        window.location.href = "{{ path('_security_facebook_logout') }}";
+                    }
+                });
+            }
+        }
+    </script>        
 {% endblock %}

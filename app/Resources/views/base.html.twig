@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml">
     <head>
         <title>{% block title %}{% trans %}Symfony Project Default{% endtrans %}{% endblock %}</title>
         <meta charset="UTF-8" />
@@ -20,5 +20,6 @@
         </div>
         {% block footer %}{% endblock %}
         {% block javascripts %}{% endblock %}
+        {{ facebook_initialize({'xfbml': true, 'fbAsyncInit': 'onFbInit();'}) }}
     </body>
 </html>

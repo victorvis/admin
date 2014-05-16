@@ -13,3 +13,11 @@ parameters:
 
     locale:            en
     secret:            ThisTokenIsNotSoSecretChangeIt
+
+    site_domain: vis.sf.dev
+
+    facebook_app_id: 'app_id'
+    facebook_app_secret: 'app_secret'
+    facebook_app_url: 'https://apps.facebook.com/'
+    facebook_app_this_url: 'http://%site_domain%'
+    facebook_app_scope: [email, user_birthday, user_location]

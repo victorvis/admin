@@ -4,12 +4,14 @@
     <nav class="navbar navbar-default" role="navigation">
         <div class="container">
             <div class="navbar-header">
+                <!--
                 <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
+                -->
                 <a href="#" class="navbar-brand">ViCtOrViS</a>
             </div>
         </div>
@@ -46,6 +48,8 @@
 
         <div class="row register-now">
             <div class="col-md-12 text-center">
+                {{ facebook_login_button({'autologoutlink': false}) }}
+                    <br /><br />
                 <a href="{{ path("fos_user_registration_register") }}" class="registration">{% trans %}Register now{% endtrans %}</a>
             </div>
         </div>        
