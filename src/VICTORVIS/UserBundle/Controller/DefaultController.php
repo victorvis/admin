@@ -3,6 +3,7 @@
 namespace VICTORVIS\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class DefaultController extends Controller
 {
@@ -11,9 +12,6 @@ class DefaultController extends Controller
         return $this->render('VICTORVISUserBundle:Default:index.html.twig');
     }
 
-    /**
-     * @Route("/login/facebook", name="lc_link_facebook")
-     */
     public function facebookLoginAction()
     {
         $shouldLogout = $this->getRequest()->get('logout');

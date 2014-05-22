@@ -43,6 +43,7 @@ security:
 
     access_control:
         - { path: ^/user/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/user/login_facebook$, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/user, role: IS_AUTHENTICATED_FULLY }

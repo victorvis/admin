@@ -13,7 +13,7 @@
         '@VICTORVISUserBundle/Resources/public/js/*' %}
         <script type="text/javascript" src="{{ asset_url }}"></script>
     {% endjavascripts %}
-        
+<!--
     <script type="text/javascript">
         function goLogIn(){
             window.location.href = "{{ path('_security_check_facebook') }}";
@@ -30,5 +30,40 @@
                 });
             }
         }
-    </script>        
+    </script>
+-->
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '{{ facebook_app_id }}',
+                status     : true, // check login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : false  // parse XFBML
+            });
+
+            FB.getLoginStatus(function(response) {
+                {% if app.session.get('facebook.logout') is not null %}
+                    var sessionClean = {{ app.session.remove('facebook.logout') }};
+                    FB.logout();
+                {% endif %}
+                var button = $('a.connect.facebook');
+                if (button.length > 0) {
+                    var url = button.data('href');
+                    if (response.status === 'unknown') {
+                        url += '?logout';
+                    }
+                    button.attr('href', url);
+                }
+
+            });
+        };
+
+        (function(d){
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/en_US/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
 {% endblock %}
