@@ -196,7 +196,7 @@ class User extends BaseUser
     public function setFacebookId($facebookId)
     {
         $this->facebookId = $facebookId;
-        $this->setUsername($facebookId);
+        //$this->setUsername($facebookId);
     }
 
     /**
@@ -205,6 +205,18 @@ class User extends BaseUser
     public function getFacebookId()
     {
         return $this->facebookId;
+    }
+
+    public function setFacebookUsername($facebookUsername)
+    {
+        $this->facebookUsername = $facebookUsername;
+
+        return $this;
+    }
+
+    public function getFacebookUsername()
+    {
+        return $this->facebookUsername;
     }
 
     /**
@@ -225,5 +237,8 @@ class User extends BaseUser
         if (isset($fbdata['email'])) {
             $this->setEmail($fbdata['email']);
         }
+        if (isset($fbdata['username']) && is_null($this->getFacebookUsername())) {
+            $this->setFacebookUsername($fbdata['username']);
+        }        
     }    
 }

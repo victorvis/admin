@@ -58,7 +58,6 @@ class FacebookProvider implements UserProviderInterface
 
     public function connectExistingAccount()
     {
-
         try {
             $fbdata = $this->facebook->api('/me');
         } catch (FacebookApiException $e) {
