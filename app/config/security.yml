@@ -23,7 +23,13 @@ security:
 
         main:
             pattern: ^/
-            
+
+            remember_me:
+                key:      "%secret%"
+                lifetime: 31536000 # 365 days in seconds
+                path:     /
+                domain:   ~
+
             fos_facebook:
                 app_url: ""
                 server_url: "http://%site_domain%"
@@ -35,8 +41,9 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-                check_path:     /user/login_check
-                login_path:     /user/login
+                check_path: /user/login_check
+                login_path: /user/login
+                remember_me: true
             logout:       
                 path: /user/logout 
             anonymous:    true
