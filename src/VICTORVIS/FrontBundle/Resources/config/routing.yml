@@ -1,3 +1,11 @@
 victorvis_front_homepage:
     pattern:  /
     defaults: { _controller: VICTORVISFrontBundle:Default:index }
+
+victorvis_front_list:
+    pattern:  /list
+    defaults: { _controller: VICTORVISFrontBundle:Default:list }
+
+victorvis_front_list_pdf:
+    pattern:  /list/pdf
+    defaults: { _controller: VICTORVISFrontBundle:Default:listPdf }

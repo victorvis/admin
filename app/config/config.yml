@@ -93,6 +93,12 @@ fos_facebook:
     secret: %facebook_app_secret%
     cookie: true
     permissions: %facebook_app_scope%
-    
+
+knp_snappy:
+    pdf:
+        enabled:    true
+        binary:     "%pdf_binary%"
+        options:    []
+
 parameters:
     user.class: VICTORVIS\UserBundle\Entity\User
