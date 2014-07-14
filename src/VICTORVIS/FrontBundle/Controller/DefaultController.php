@@ -21,7 +21,10 @@ class DefaultController extends Controller
         $pageUrl = $this->generateUrl('victorvis_front_list', array(), true);
 
         return new \Symfony\Component\HttpFoundation\Response(
-            $this->get('knp_snappy.pdf')->getOutput($pageUrl),
+            $this->get('knp_snappy.pdf')->getOutput($pageUrl,array(
+                'no-background' => false,
+                
+            )),
             200,
             array(
                 'Content-Type'          => 'application/pdf',
